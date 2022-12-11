@@ -1,0 +1,564 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+  font-family: Arial;
+  font-size: 16px;
+}
+main {
+  min-height: 600px;
+  background-color: #edf3f7; /* #a1b1c2; */
+}
+
+
+/* верхнее меню и навигация */
+.wrapper {
+  margin: 0 auto;
+}
+header {
+  height: 120px;
+  background-color: #6da1ab; /* #62639b; */
+  width: 100%;
+}
+.logo{
+  width: 30%;
+  float: left;
+}
+.logo img {
+  width: 100px;
+  margin: 10px 0 0 40px;
+}
+nav {
+  float: right;
+}
+nav a {
+  float: left;
+  text-decoration: none;
+  font-size: 20px;
+  margin: 0 20px;
+  padding-top: 40px;
+  color: white;
+}
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+.dropdown .dropbtn {
+  padding-top: 40px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  color: white;
+  margin: 0 20px;
+  background-color: inherit;
+  font-family: inherit
+  margin: 0;
+}
+nav a:hover, .dropdown:hover .dropbtn {
+  text-decoration: underline;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 150px;
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+  z-index: 10;
+}
+.dropdown-content a {
+  float: none;
+  color: #6da1ab;
+  padding: 12px 100px;
+  text-decoration: none;
+  display: block;
+  padding: 12px 10px;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.vertical-menu {
+  float: left;
+  margin: 0 40px 0 40px;
+  width: 200px;
+}
+.vertical-menu a {
+  font-size: 20px;
+  background-color: #eee;
+  color: #6da1ab;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+.vertical-menu a:hover {
+  background-color: #6da1ab;
+  color: white;
+}
+.vertical-menu a.active {
+  background-color: #6da1ab;
+  color: white;
+}
+
+.mainColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+  margin-right: 40px;
+}
+.mainRow {
+  width: 100%; 
+  font-size: 20px;
+  text-align: justify;
+}
+
+/* подвал */
+footer {
+  height: 120px;
+  background-color: #6da1ab;
+  width: 100%;
+}
+.logoFooter {
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+.logoFooter img {
+  width: 100px;
+  margin: 10px 0 0 40px;
+}
+
+/* кабинет админа */
+.welcome {
+  text-align: center;
+  font-size: 20px;
+}
+.welcome p {
+  padding-top: 10px;
+}
+.welcome a {
+  border: 2px solid black;
+  padding: 5px 20px 5px 20px;
+  text-decoration: none;
+  background-color: #6da1ab;
+  color: white;
+  /* border-radius: 10px; */
+}
+.welcome a:hover {
+  background-color: #557980;
+  color: white;
+}
+.buttonsAdmin {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+.buttonsAdmin a {
+  border: 2px solid black;
+  padding: 7px 20px 7px 20px;
+  text-decoration: none;
+  background-color: #6da1ab;
+  color: white;
+}
+.buttonsAdmin a:hover {
+  background-color: #557980;
+  color: white;
+}
+
+/* склад */
+.tableWarehouse {
+  text-align: justify;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 40px;
+}
+.tableWarehouse table, tr, td {
+  border-collapse: collapse;
+  border: 1px solid black;
+  font-size: 18px;
+}
+.tableWarehouse caption {
+  font-size: 28px;
+  font-weight: bold;
+}
+.tableWarehouse a {
+  text-decoration: underline;
+  color: black;
+}
+.tableWarehouse a:hover {
+  text-decoration: none;
+  font-size: 20px;
+}
+
+
+/* заказы пользователей */
+.tableOrders {
+  text-align: justify;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 40px;
+}
+.tableOrders table, tr, td {
+  border-collapse: collapse;
+  border: 1px solid black;
+  font-size: 18px;
+}
+.tableOrders td {
+  height: 70px;
+}
+.tableOrders caption {
+  font-size: 28px;
+  font-weight: bold;
+  padding-top: 20px;
+}
+.executeOrderBtn {
+  border: 2px solid black;
+  padding: 5px;
+  margin: 5px;
+  background-color: #edf3f7;
+}
+.executeOrderBtn:hover {
+  background-color: black;
+  color: white;
+}
+
+
+/* вход  */
+.container {
+  text-align: center;
+  padding-top: 5%;
+  font-size: 20px;
+}
+.container label {
+  text-align: left;
+}
+.container input[type=text], input[type=password], input[type=email] {
+  width: 40%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border: 1px solid #6da1ab;;
+}
+.container input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.enterbtn {
+  background-color: #6da1ab;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+  opacity: 0.9;
+  font-size: 20px;
+}
+.enterbtn:hover {
+  opacity: 1;
+}
+
+
+/* создание товаров, изменение */
+.containerGoods {
+  padding: 30px 20% 30px 20%;
+  clear:both; 
+  text-align:right;
+}
+.containerGoods label {
+  float: left;
+}
+.containerGoods hr {
+  border: none;
+  color: black;
+  background-color: black;
+  height: 2px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.containerGoods select {
+  width: 53%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border: 1px solid #6da1ab;
+}
+.containerGoods select:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.containerGoods input[type=text], input[type=number], input[type=textarea]  {
+  width: 50%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: 1px solid #6da1ab;
+  background: #f1f1f1;
+}
+.containerGoods input[type=text]:focus, input[type=number]:focus, input[type=textarea]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.createbtn {
+  background-color: #6da1ab;
+  color: black;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  width: 13%;
+  opacity: 0.9;
+  font-size: 20px;
+}
+.createbtn:hover {
+  opacity: 1;
+}
+
+/* товары для пользователя */
+.columnBoat {
+  float: left;
+  width: 25%;
+  font-size: 18px;
+}
+.rowBoat {
+  text-align: center;
+}
+.rowBoat:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cardBoat {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 2px solid black;
+  min-height: 560px;
+  padding: 4px;
+  margin: 40px;
+  text-align: center;
+  /*background-color: #FCE883;*/
+}
+.cardBoat img {
+  max-width: 300px;
+  max-height: 300px;
+}
+.cardBoat a {
+  text-decoration: underline;
+  color: black;
+  font-weight: bold;
+}
+
+/* вся информация о товаре */
+.columnFullInfo {
+  display: block;
+  float: left;
+  width: 50%;
+  text-align: justify;
+  margin-top: 70px;
+}
+/* не работает after */
+.cardFullInfo:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.h3 {
+  font-size: 25px;
+}
+.columnFullInfo img {
+  margin-left: 25%;
+  max-width: 300px;
+}
+.columnFullInfo p {
+  margin-right: 25%;
+  padding-bottom: 20px;
+}
+.columnFullInfo button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #6da1ab;
+  border: 1px solid black;
+  color: black;
+}
+.columnFullInfo button:hover {
+  background-color: black;
+  border: 2px solid black;
+  color: white;
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
+}
+
+/* корзина */
+.basketTable {
+  margin-top: 30px;
+  text-align: center; /* не раборает*/
+}
+.basketTable table {
+  border-collapse: collapse;
+}
+#basketTable {
+  width: 100%;
+}
+#basketTable img{
+  max-width: 100px;
+}
+#basketTable tr, td {
+  border: 2px solid black;
+}
+#basketTable a {
+  text-decoration: underline;
+  color: black;
+}
+#basketTable a:hover {
+  text-decoration: none;
+}
+.totalCost {
+  margin-top: 30px;
+  margin-right: 10px; 
+  font-size: 20px;
+  color: black;
+  text-align: right;
+}
+.basketForm {
+  padding-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.basketForm input[type=text], input[type=number] {
+  padding: 10px;
+  border: 1px solid #6da1ab;
+  background: #f1f1f1;
+  width: 300px;
+}
+.basketForm input[type=text]:focus, input[type=number]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.basketForm button {
+  padding: 10px;
+  margin-left: 10px;
+  background-color: #edf3f7;
+  border: 1px solid black;
+  color: black;
+}
+.basketForm button:hover {
+  background-color: black;
+  color: white;
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
+}
+
+
+/* информация о нас */
+.rowAbout {
+  padding: 15px 0 15px 0;
+}
+.rowAbout hr {
+  border: none;
+  color: red;
+  background-color: black;
+  height: 2px;
+  margin-top: 30px;
+}
+.columnAbout {
+  float: left;
+  width: 33.33%;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
+.columnAbout img {
+  margin-bottom: 30px;
+}
+.columnAbout img:hover {
+  height: 92px;
+}
+.rowAbout:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.mapAbout {
+  text-align: center;
+  margin-top: 30px;
+  padding-bottom: 40px;
+}
+.mapAbout hr {
+  border: none;
+  color: red;
+  background-color: black;
+  height: 2px;
+  margin-bottom: 30px;
+}
+.mapAbout p {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.mapAbout img {
+  width: 60%;
+  border: 2px solid black;
+}
+
+.columnAboutTeam {
+  float: left;
+  width: 25%;
+}
+.rowAboutTeam {
+  text-align: center;
+}
+.rowAboutTeam:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cardAboutTeam {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 2px solid black;
+  min-height: 560px;
+  padding: 4px;
+  margin: 40px;
+  text-align: center;
+  /*background-color: #FCE883;*/
+}
+.textCardAbout {
+  text-align: justify;
+  padding: 30px;
+}
+.textCardAboutMuted {
+  color: #9ea19c;
+  margin-top: -20px;
+}
+.titleAbout {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+
+.rowDelivery {
+  padding: 40px;
+  font-size: 18px;
+}
+
+
+
+/* регстирация */
+.registerHref {
+  text-align: center;
+  font-size: 20px;
+}
+.registerHref p {
+  padding-top: 10px;
+}
+.registerHref a {
+  text-decoration: underline;
+  color: black;
+}
+.registerHref a:hover {
+  opacity: 0.9;
+}
