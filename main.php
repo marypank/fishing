@@ -3,13 +3,14 @@
 
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Рыболов</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/slider.css">
 </head>
 
 <body>
-	<?php require_once "header.php" ?>
+	<?php require_once "include/header.php" ?>
 
 	<main>
 		<div id="slider">
@@ -42,14 +43,26 @@
 		</div>
 
 		<div class="vertical-menu">
-			<a href="main.php" class="active">Главная</a>
+			<a href="main.php">Главная</a> <!-- class="active" -->
 			<a href="about.php">О нас</a>
-			<a href="fishEquipment.php">Рыболовная оснастка</a>
-			<a href="rods.php">Спининги/Удилища/Удочки</a>
-			<a href="equipment.php">Экипировка</a>
-			<a href="boat.php">Лодки/Катера</a>
+			<a href="delivery.php">Доставка и оплата</a>
+			<a href="catalog.php">Каталог</a>
 			<a href="basket.php">Корзина</a>
-			<a href="enter.php">Вход</a>
+			<?php
+				require_once "db.php";
+				if (isset($_SESSION['session_username'])):
+			?>
+				<a href="wishlist.php">Wishlist</a>
+
+				<?php if ($_SESSION['access'] === '0'): ?>
+					<a href="register.php">Личный кабинет</a>
+				<?php else: ?>
+					<a href="enter.php">Личный кабинет</a>
+				<?php endif; ?>
+
+			<?php else: ?>
+				<a href="enter.php">Вход/Регистрация</a>
+			<?php endif; ?>
 		</div>
 
 		<div class="mainColumn">
@@ -79,7 +92,7 @@
 
 	</main>
 
-	<?php require_once "footer.php" ?>
+	<?php require_once "include/footer.php" ?>
 </body>
 
 </html>

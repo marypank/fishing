@@ -3,12 +3,12 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Рыболов Регистрация</title>
+	<title>Рыболов</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-	<?php require_once "header.php" ?>
+	<?php require_once "include/header.php" ?>
 
 	<?php 
 		include('db.php');
@@ -28,7 +28,6 @@
 				$errors[] = 'Эта почта уже используется другим аккаунтом!';			
 			}
 			if(empty($errors) ) {
-				// do works
 				$result = mysqli_query($con, "INSERT INTO `users` (`login`, `email`, `password`, `access`) values('$login', '$email', '$password', '0')");
 				$errors[] = 'Вы зарегистрированы!';
 			}
@@ -102,7 +101,7 @@
 			<div class="container">
 				<h1>Регистрация</h1>
 				<p><?php if (!empty($errors)) { echo array_shift($errors); } else { echo ''; } ?></p>
-				<label for="login"><b>Логин</b></label><br>
+				<label for="login"><b>Логин/Имя</b></label><br>
 				<input type="text" placeholder="Введите логин" name="login" id="login" required><br>
 
 				<label for="email"><b>Почта</b></label><br>
@@ -122,7 +121,7 @@
 
 	</main>
 
-	<?php require_once "footer.php" ?>
+	<?php require_once "include/footer.php" ?>
 
 </body>
 

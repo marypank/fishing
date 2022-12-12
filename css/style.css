@@ -207,6 +207,8 @@ footer {
 }
 .tableOrders td {
   height: 70px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .tableOrders caption {
   font-size: 28px;

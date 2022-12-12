@@ -3,12 +3,12 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Рыболов Вход</title>
+	<title>Рыболов</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-	<?php require_once "header.php" ?>
+	<?php require_once "include/header.php" ?>
 
 	<?php 
 		include('db.php');
@@ -57,8 +57,9 @@
 
 		<div class="buttonsAdmin">
 			<a href="goods.php">Товары</a>
-			<a href="ordersNew.php">Новые заказы</a>
-			<a href="ordersDone.php">Выполненные заказы</a>
+			<a href="ordersNew.php?order=0">Новые заказы</a>
+			<a href="ordersDone.php?order=1">Выполненные заказы</a>
+			<a href="users.php">Пользователи</a>
 		</div>
 
 		<?php else: ?>
@@ -82,7 +83,7 @@
 		<?php endif; ?>
 		
 	</main>
-	<?php require_once "footer.php" ?>
+	<?php require_once "include/footer.php" ?>
 
 </body>
 

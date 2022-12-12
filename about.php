@@ -11,7 +11,7 @@
 </head>
 
 <body>
-	<?php require_once "header.php" ?>
+	<?php require_once "include/header.php" ?>
 
 	<main>
 		<div class="rowAbout">
@@ -82,8 +82,7 @@
 			</div>
 		</div>
 	</main>
-	<?php require_once "footer.php" ?>
-
+	<?php require_once "include/footer.php" ?>
 
 </body>
 

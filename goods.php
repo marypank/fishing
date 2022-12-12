@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<?php require_once "header.php" ?>
+	<?php require_once "include/header.php" ?>
 
 	<?php 
 		if (!isset($_SESSION['session_username'])) {
@@ -84,7 +84,7 @@
 
 	</main>
 
-	<?php require_once "footer.php" ?>
+	<?php require_once "include/footer.php" ?>
 </body>
 
 </html>

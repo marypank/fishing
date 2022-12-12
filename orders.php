@@ -3,13 +3,13 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Рыболов Выполненные Заказы пользователей</title>
+	<title>Рыболов Заказы пользователей</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/slider.css">
 </head>
 
 <body>
-	<?php require_once "header.php" ?>
+	<?php require_once "include/header.php" ?>
 
 	<?php 
 		if (!isset($_SESSION['session_username'])) {
@@ -30,7 +30,10 @@
 			<p><a href="enter.php">Назад</a></p>
 		</div>
 
-		<?php $result = mysqli_query($con, "SELECT * FROM `orders` where `execution` = 1 group by `date`,`fullName` ,`userEmail`"); ?>
+		<?php
+			$isDone = $_GET['order'] ?? 0;
+			$result = mysqli_query($con, "SELECT * FROM `orders` where `execution` = $isDone group by `date`,`fullName` ,`userEmail`");
+		?>
 		<div class="tableOrders">
 			<table id="tableOrders">
 			<caption>Заказы</caption>
@@ -75,7 +78,7 @@
 
 	</main>
 
-	<?php require_once "footer.php" ?>
+	<?php require_once "include/footer.php" ?>
 </body>
 
 </html>
