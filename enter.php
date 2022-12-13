@@ -38,6 +38,7 @@
 				$array = mysqli_fetch_array($result);
 				$_SESSION['access'] = $array[0];
 				$_SESSION['name'] = $array[1];
+				header('Location: enter.php');
 			}
 
 		}
@@ -57,8 +58,8 @@
 
 		<div class="buttonsAdmin">
 			<a href="goods.php">Товары</a>
-			<a href="ordersNew.php?order=0">Новые заказы</a>
-			<a href="ordersDone.php?order=1">Выполненные заказы</a>
+			<a href="orders.php?order=0">Новые заказы</a>
+			<a href="orders.php?order=1">Выполненные заказы</a>
 			<a href="users.php">Пользователи</a>
 		</div>
 

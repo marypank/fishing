@@ -26,5 +26,4 @@
 	} else {
 			header('Location: goods.php');
 	}
-
 ?>
